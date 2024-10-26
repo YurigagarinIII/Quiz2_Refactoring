@@ -1,0 +1,121 @@
+"""
+Student Name: Yuri R. Gagarin II
+Course, Year, and Section: CS3B
+Quiz No.: 2
+Date: 10/11/2024
+"""
+
+studentName = "Lewis Fonsi" 
+studentAddress = "City of Candon, Ilocos Sur" 
+studentFavNum1 = int(25)                                 #declared it as an int
+studentAge = int(25)    
+studentAllowance = float(500)                      #declared it as a float
+
+classmateName = "Andrea Andres" 
+classmateAddress = "City of Vigan, locos Sur" 
+classmatefavNum1 = "18"                             #declared the number as a string
+classmateAge = "21"
+classmateAllowance = "700"
+
+sName_Length = len(studentName)                   #determine the length
+cName_Length = len(classmateName)
+
+if "Ilocos Sur" in studentAddress and classmateAddress:
+    print(studentName + " is from " + studentAddress)  
+    if sName_Length > cName_Length:
+        print("Andrea Andres has a longer name than Lewis Fonsi with 13 letters over 11 letters. ")
+    else:
+        print("Lewis Fonsi has a longer name than Andrea Andres with 13 letters over 11 letters.")
+elif "Ilocos Sur" in studentAddress and classmateAddress:     
+    sName_Split = studentName.split(" ")                   #it splits in between the student and classmate's names
+    cName_Split = classmateName.split(" ")
+    print(f"One among {sName_Split} or {cName_Split} Lives in Ilocos Sur")  #use f to concatenate values
+else:
+    print("None of the Students live in Ilocos Sur")
+
+addedAge = ((studentAge) + int(classmateAge))
+print(f"The added age of Lewis Fonsi and Andrea Anfres is: {addedAge}")
+
+subtractedFavNums = (studentFavNum1 - int(classmatefavNum1))
+print(f"The subtracted value of favenum of Lewis Fonsi and Andea Andres is: {subtractedFavNums}")  
+
+combinedWeeklyAllowance = (studentAllowance + float(classmateAllowance))
+print(f"The weekly allowance of Lewis Fonsi and Andrea Andres is {combinedWeeklyAllowance:.2f} pesos")  #:.2f it determines the number of decimals
+
+classList = [studentName, classmateName]
+classList_Ext = [studentAddress, classmateAddress]
+classList.extend(classList_Ext)
+for z in classList:      #prints in for loop fro iterating over a sequence
+    print(z)
+
+classNumbers = [studentAge, studentAllowance, studentFavNum1]
+classNumbers.append(int(classmateAge))           #printing all the values that was declared
+classNumbers.append(int(classmatefavNum1))         
+classNumbers.append(int(classmateAllowance))
+classNumbers.sort()
+for y in classNumbers:
+    print(y)
+
+def quizTwo():
+    studenNameCS = "GAGARIN"
+    print(f"Congratulations on Quiz 2 {studenNameCS}") 
+quizTwo()                    #to call the function
+
+"""
+Student Name: Yuri R. Gagarin II
+Course, Year, and Section: CS3B
+Quiz No.: 2 Refactoring
+Date: 10/21/2024
+"""
+DictInfo = {
+"studentName" : "Lewis Fonsi",
+"studentAddress" : "City of Candon, Ilocos Sur",
+"studentFavNum1" : int(25),                              
+"studentAge" : int(25),   
+"studentAllowance" : float(500),                     
+
+"classmateName" : "Andrea Andres", 
+"classmateAddress" : "City of Vigan, locos Sur", 
+"classmatefavNum1" : "18",                             
+"classmateAge" : "21",
+"classmateAllowance" : "700"
+}
+print(DictInfo)
+length_list = []
+length_list.append(len("studentName"))                  #determine the length
+length_list.append(len("classmateName"))                #determine the length
+def call_funct():
+    if "Ilocos Sur" in DictInfo["studentAddress"] and DictInfo["classmateAddress"]:
+        print(DictInfo["studentName"] + " is from " + DictInfo["studentAddress"])  
+        if length_list[1] > length_list[0]:
+            print("Andrea Andres has a longer name than Lewis Fonsi with 13 letters over 11 letters. ")
+        else:
+            print("Lewis Fonsi has a longer name than Andrea Andres with 13 letters over 11 letters.")
+    elif "Ilocos Sur" in DictInfo["studentAddress"] and DictInfo["classmateAddress"]:     
+        sName_Split = DictInfo["studentName"].split(" ")                   #it splits in between the student and classmate's names
+        cName_Split = DictInfo["classmateName"].split(" ")
+        print(f"One among {sName_Split} or {cName_Split} Lives in Ilocos Sur")  #use f to concatenate values
+    else:
+        print("None of the Students live in Ilocos Sur")
+
+call_funct()                       # this calls the function "call_func()""
+
+addedAge2 = DictInfo["studentAge"] + int(DictInfo["classmateAge"])
+print(f"The added age of Lewis Fonsi and Andrea Anfres is: {addedAge2}")
+
+subtractedFavNums2 = DictInfo["studentFavNum1"] - int(DictInfo["classmatefavNum1"])
+print(f"The subtracted value of favenum of Lewis Fonsi and Andea Andres is: {subtractedFavNums2}")  
+
+combinedWeeklyAllowance2 = DictInfo["studentAllowance"] + float(DictInfo["classmateAllowance"])
+print(f"The weekly allowance of Lewis Fonsi and Andrea Andres is {combinedWeeklyAllowance2:.2f} pesos")  #:.2f it determines the number of decimals
+
+classNumbers = [studentAge, studentAllowance, studentFavNum1]
+classNumbers.append(int(classmateAge))           #printing all the values that was declared previously at the first part
+classNumbers.append(int(classmatefavNum1))         
+classNumbers.append(int(classmateAllowance))
+classNumbers.sort(reverse=True)                  #reverses the list for classNumbers
+for x in classNumbers:
+    print(x)
+
+username = input("What is your username?: ")            # input will update and pass it unto quiz two
+quizTwo(username)                  # this is the parameter
